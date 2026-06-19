@@ -1,5 +1,5 @@
 // script.js — UI orchestrator
-import { fetchFiles, fetchFileContent, upsertFile, deleteFile } from './api.js';
+import { ping, fetchFiles, fetchFileContent, upsertFile, deleteFile } from './api.js';
 import { MONOL_WATERMARK } from './config.js';
 import { encryptText, decryptText } from './crypto.js';
 import { getNewFileName } from './utils.js';
@@ -127,6 +127,21 @@ function closeShortcutsDialog() {
     shortcutsDialog.close();
   }
 }
+
+async function pingServer() {
+  const light = document.getElementById('status-light');
+
+  try {
+      await ping();
+      light.className = 'light blink-green';
+  } catch (error) {
+      console.error(error);
+      light.className = 'light blink-red';
+  }
+}
+
+pingServer();
+setInterval(pingServer, 1000);
 
 // ── File List ──────────────────────────────────────────────────────────────────
 

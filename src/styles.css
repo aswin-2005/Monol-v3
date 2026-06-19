@@ -652,3 +652,66 @@ kbd {
   text-decoration: none;
   border-radius: 5px;
 }
+
+
+.light {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  margin-right: 3px;
+  margin-left: 3px;
+  transition: all 0.3s ease;
+}
+
+/* SUCCESS: Blink Red */
+.blink-red {
+  background-color: #ff3333;
+  animation: pulse-red 1s infinite;
+}
+
+/* FAILURE: Blink Green */
+.blink-green {
+  background-color: #33ff33;
+  animation: pulse-green 1s infinite;
+}
+
+/* Standard loading/neutral state */
+.searching {
+  background-color: #888;
+  box-shadow: 0 0 10px #888;
+}
+
+/* Animations */
+@keyframes pulse-red {
+  0% {
+    box-shadow: 0 0 5px #ff3333;
+    opacity: 1;
+  }
+
+  50% {
+    box-shadow: 0 0 25px #ff3333;
+    opacity: 0.4;
+  }
+
+  100% {
+    box-shadow: 0 0 5px #ff3333;
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-green {
+  0% {
+    box-shadow: 0 0 5px #33ff33;
+    opacity: 1;
+  }
+
+  50% {
+    box-shadow: 0 0 25px #33ff33;
+    opacity: 0.4;
+  }
+
+  100% {
+    box-shadow: 0 0 5px #33ff33;
+    opacity: 1;
+  }
+}
