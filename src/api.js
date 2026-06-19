@@ -1,5 +1,4 @@
-const BASE_URL = "http://127.0.0.1:8000/api";
-const MONOL_SECRET = "grantAccessToThisPersonToReadAndWriteInVault";
+import {BASE_URL, MONOL_SECRET} from './config.js'
 
 
 export async function ping() {
