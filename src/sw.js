@@ -1,7 +1,7 @@
 // Monol — Service Worker
 // Cache-first strategy for all static assets
 
-const CACHE_NAME = 'monol-v1';
+const CACHE_NAME = 'monol-v2';
 
 const ASSETS = [
   '/',
@@ -16,6 +16,8 @@ const ASSETS = [
   '/settings.js',
   '/manifest.json',
   '/logo.ico',
+  '/icon-192.png',
+  '/icon-512.png',
 ];
 
 // Install: pre-cache all assets
