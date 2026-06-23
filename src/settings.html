@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#33d17a">
     <title>Settings</title>
 </head>
 
@@ -34,6 +36,11 @@
         <a href="index.html" class="app-title go-to-home-link">← back to monolv3.1</a>
     </div>
     <script type="module" src="settings.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js');
+        }
+    </script>
 </body>
 
 </html>
