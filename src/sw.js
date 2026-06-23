@@ -1,7 +1,7 @@
 // Monol — Service Worker
 // Cache-first strategy for all static assets
 
-const CACHE_NAME = 'monol-v2';
+const CACHE_NAME = 'monol-v3';
 
 const ASSETS = [
   '/',
