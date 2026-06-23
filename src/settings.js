@@ -11,26 +11,10 @@ addEventListener('load', () => {
     filenamePrefixInput.value = localStorage.getItem('filename-prefix') || '';
 });
 
-apiSecretInput.addEventListener('keydown', (e) => {
-    if(e.key === 'Enter'){
-        localStorage.setItem('api-secret', apiSecretInput.value);
-    }
-});
-
-backendUrlInput.addEventListener('keydown', (e) => {
-    if(e.key === 'Enter'){
-        localStorage.setItem('backend-url', backendUrlInput.value);
-    }
-});
-
-pageWatermarkInput.addEventListener('keydown', (e) => {
-    if(e.key === 'Enter'){
-        localStorage.setItem('page-watermark', pageWatermarkInput.value);
-    }
-});
-
-filenamePrefixInput.addEventListener('keydown', (e) => {
-    if(e.key === 'Enter'){
-        localStorage.setItem('filename-prefix', filenamePrefixInput.value);
-    }
+document.getElementById('settings-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    localStorage.setItem('api-secret', apiSecretInput.value);
+    localStorage.setItem('backend-url', backendUrlInput.value);
+    localStorage.setItem('page-watermark', pageWatermarkInput.value);
+    localStorage.setItem('filename-prefix', filenamePrefixInput.value);
 });
